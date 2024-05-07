@@ -1,7 +1,7 @@
 from discord.ext import commands
 from discord import Intents
 
-intents = Intents()
+intents = Intents().default()
 intents.message_content = True
 
 class Bot(commands.Bot):
