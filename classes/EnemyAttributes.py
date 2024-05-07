@@ -1,5 +1,3 @@
-from typing import Dict
-
 class EnemyAttributes:
   def __init__(self, name, level, alignment, size, enemyType, additionalTags, perception, languages, skills, strength, dexterity,
               constitution,intelligence, wisdom, charisma, generalAbilities, items, armorClass, fortitudeSave, reflexSave, willSave,

@@ -1,4 +1,7 @@
 <html class="surelyThisIsUnique">
+  <head>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
   <body>
     <div class="btn-select" style="width: 720px; margin: 1rem auto">
       <div style="color: rgb(34, 34, 34); overflow-y: hidden;" class="position-relative">
@@ -12,7 +15,7 @@
           <div id="alignment" class="btn btn-pf btn-pf-alignment text-uppercase"> le </div>
           <div id="size" class="btn btn-pf btn-pf-size text-uppercase"> medium </div>
           <div id="enemyType" class="btn btn-pf text-uppercase"> undead </div>
-          <div id="additionalTagWrapper">
+          <div id="additionalTagsWrapper">
             <div class="btn btn-pf text-uppercase"> wight </div>
           </div>
           <div class="btn btn-pf btn-pf-edge"> &nbsp; </div>
@@ -22,7 +25,8 @@
             <div class="flex-fill">
               <div>
                 <div class="line-height-120 hanging-indent">
-                  <span id="perception" class="font-weight-bold">Perception</span> +9; senses
+                  <span class="font-weight-bold">Perception</span> <span id="perception">+9</span>
+                  <span id="senses">senses</span>
                 </div>
               </div>
               <div>
@@ -35,46 +39,46 @@
                 <div class="line-height-120 hanging-indent">
                   <span class="font-weight-bold">Skills</span>
                   <span id="skillsWrapper">
-                      <span>Acrobatics&nbsp;+9,</span>
-                      <span>Arcana&nbsp;+9,</span>
-                      <span>Athletics&nbsp;+9,</span>
-                      <span>Crafting&nbsp;+9,</span>
-                      <span>Deception&nbsp;+9,</span>
-                      <span> Diplomacy&nbsp;+9,</span>
-                      <span>Intimidation&nbsp;+9,</span>
-                      <span>Medicine&nbsp;+9,</span>
-                      <span>Nature&nbsp;+9,</span>
-                      <span>Occultism&nbsp;+9,</span>
-                      <span> Performance&nbsp;+9,</span>
-                      <span>Religion&nbsp;+9,</span>
-                      <span>Society&nbsp;+9,</span>
-                      <span>Stealth&nbsp;+9,</span>
-                      <span>Survival&nbsp;+9,</span>
-                      <span>Thievery&nbsp;+9,</span>
-                      <span>Test&nbsp;+9,</span>
-                      <span>Lore&nbsp;+9</span>
+                    <span>Acrobatics&nbsp;+9</span>,
+                    <span>Arcana&nbsp;+9</span>,
+                    <span>Athletics&nbsp;+9</span>,
+                    <span>Crafting&nbsp;+9</span>,
+                    <span>Deception&nbsp;+9</span>,
+                    <span>Diplomacy&nbsp;+9</span>,
+                    <span>Intimidation&nbsp;+9</span>,
+                    <span>Medicine&nbsp;+9</span>,
+                    <span>Nature&nbsp;+9</span>,
+                    <span>Occultism&nbsp;+9</span>,
+                    <span>Performance&nbsp;+9</span>,
+                    <span>Religion&nbsp;+9</span>,
+                    <span>Society&nbsp;+9</span>,
+                    <span>Stealth&nbsp;+9</span>,
+                    <span>Survival&nbsp;+9</span>,
+                    <span>Thievery&nbsp;+9</span>,
+                    <span>Test&nbsp;+9</span>,
+                    <span>Lore&nbsp;+9</span>
                   </span>
                 </div>
               </div>
               <div>
                 <div class="line-height-120 hanging-indent">
-                  <span id="strScore" class="font-weight-bold">Str</span>&nbsp;+3,
-                  <span id="dexScore" class="font-weight-bold">Dex</span>&nbsp;+3,
-                  <span id="conScore" class="font-weight-bold">Con</span>&nbsp;+3,
-                  <span id="intScore" class="font-weight-bold">Int</span>&nbsp;+3,
-                  <span id="wisScore" class="font-weight-bold">Wis</span>&nbsp;+3,
-                  <span id="chaScore" class="font-weight-bold">Cha</span>&nbsp;+3
+                  <span class="font-weight-bold">Str</span> <span id="strScore">+3</span>,
+                  <span class="font-weight-bold">Dex</span> <span id="dexScore">+3</span>,
+                  <span class="font-weight-bold">Con</span> <span id="conScore">+3</span>,
+                  <span class="font-weight-bold">Int</span> <span id="intScore">+3</span>,
+                  <span class="font-weight-bold">Wis</span> <span id="wisScore">+3</span>,
+                  <span class="font-weight-bold">Cha</span> <span id="chaScore">+3</span>
                 </div>
               </div>
               <div>
                 <div class="line-height-120 hanging-indent">
                   <div id="generalAbilitiesWrapper">
-                    <span>
+                    <span id="generalAbility">
                       <span class="font-weight-bold">Ability</span>
                       <div style="height: 1em; text-indent: 0px;" class="d-inline-block">
-                        <img class="text-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE4MEZFNjc4RjU1NzExRTlBOEVFRjNBNEQ4N0E2RkMzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE4MEZFNjc5RjU1NzExRTlBOEVFRjNBNEQ4N0E2RkMzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTgwRkU2NzZGNTU3MTFFOUE4RUVGM0E0RDg3QTZGQzMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTgwRkU2NzdGNTU3MTFFOUE4RUVGM0E0RDg3QTZGQzMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7sbzAyAAADI0lEQVR42uzd0UobQRSAYbEXmkDN62gqVR+5d8U7fRFfoPdCKdgJGAqhSjKzOzNn9vvhPECynxszuzv5cqaP2qT5keYlza80f7wlOgXPU5q3NK9pvqVZeVt0LJ7ndzxvEKkUD0QqxgORivFApGI8EKkYD0QqxgMRPMV4IIJnsoEIHojUDg9E8ECk9nggggcitccDUfCuOsADETwQwQORBsBziGjtcMFTgugWInggggcieGLigQgeiOCBCB6IBA9E8EAED0TwQKR/bRaMx7UzeCBq2SM4EJX0kOY3OO4nym0FEUQQQdS8NUQQQQQRRBBBBJEggggiiCDqGtEWIoggOlgQ3J1a72Z4URANjmiP5/X9ID9ABFEOnv2LggiibDwQQVSMByKIivFABFExHojaIbrpEVEOHoggKsYD0cIRTYEHooVeO5sSD0QLQzQHHogWgmhOPIeI1hBVRXQxAh6I2iG6nhNRTTwQDYaoBR6IBkHUEg9EwRH1gAeioIh6wgNRMEQ94oEoCKKe8UDUFtHlCHggansB9nIEPDUQ3UF0PKKIeOZGtILoOESR8UDUAaJtcDyHiOZYhb+H6P+Izs+kCf7Ctj7CnH1K/w+Kigiejr6JRUM059d4eDLXgqIgspDYGZ5IiODp9FJGBETwdHrmiYAIniB4elylhicYnp4QwRMUTw+I4AmOpyUieAbB0wIRPIPhqYkInvp4bmvgqYHI5gpt8FT/PVbbu8DTFSJ4FoZnSkTwLBTPFIjgWTieEkTwwJONCJ42u5B1i+cURPDAk41od3DvZ8DjHuZOt/OdEhE88Jx8YPc3pcEDTxGi7/DA0xtMeOCBBx54esHjN+PhgQceeOCBBx54BA888MADDzzRgufj57bgOaJHYNo89DdKmzTP4MADETwQwQMRPBAtBhE8EMEDETzDdpXmyQqzIIIHInggggeicIjggQgeiOBRIEQe+oMIHojgUSBE8EAED0T1EcEDETyqj8g6z+B9nRERPBDBo/qI4IEIHtVHBI+yEcGjbER2yVA2Io/eKBsRPMpGBI+yEcGjrHbXzn7C83l/BRgAezhEuPoii34AAAAASUVORK5CYII=">
+                        <img id="actionCost" class="text-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE4MEZFNjc4RjU1NzExRTlBOEVFRjNBNEQ4N0E2RkMzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE4MEZFNjc5RjU1NzExRTlBOEVFRjNBNEQ4N0E2RkMzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTgwRkU2NzZGNTU3MTFFOUE4RUVGM0E0RDg3QTZGQzMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTgwRkU2NzdGNTU3MTFFOUE4RUVGM0E0RDg3QTZGQzMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7sbzAyAAADI0lEQVR42uzd0UobQRSAYbEXmkDN62gqVR+5d8U7fRFfoPdCKdgJGAqhSjKzOzNn9vvhPECynxszuzv5cqaP2qT5keYlza80f7wlOgXPU5q3NK9pvqVZeVt0LJ7ndzxvEKkUD0QqxgORivFApGI8EKkYD0QqxgMRPMV4IIJnsoEIHojUDg9E8ECk9nggggcitccDUfCuOsADETwQwQORBsBziGjtcMFTgugWInggggcieGLigQgeiOCBCB6IBA9E8EAED0TwQKR/bRaMx7UzeCBq2SM4EJX0kOY3OO4nym0FEUQQQdS8NUQQQQQRRBBBBJEggggiiCDqGtEWIoggOlgQ3J1a72Z4URANjmiP5/X9ID9ABFEOnv2LggiibDwQQVSMByKIivFABFExHojaIbrpEVEOHoggKsYD0cIRTYEHooVeO5sSD0QLQzQHHogWgmhOPIeI1hBVRXQxAh6I2iG6nhNRTTwQDYaoBR6IBkHUEg9EwRH1gAeioIh6wgNRMEQ94oEoCKKe8UDUFtHlCHggansB9nIEPDUQ3UF0PKKIeOZGtILoOESR8UDUAaJtcDyHiOZYhb+H6P+Izs+kCf7Ctj7CnH1K/w+Kigiejr6JRUM059d4eDLXgqIgspDYGZ5IiODp9FJGBETwdHrmiYAIniB4elylhicYnp4QwRMUTw+I4AmOpyUieAbB0wIRPIPhqYkInvp4bmvgqYHI5gpt8FT/PVbbu8DTFSJ4FoZnSkTwLBTPFIjgWTieEkTwwJONCJ42u5B1i+cURPDAk41od3DvZ8DjHuZOt/OdEhE88Jx8YPc3pcEDTxGi7/DA0xtMeOCBBx54esHjN+PhgQceeOCBBx54BA888MADDzzRgufj57bgOaJHYNo89DdKmzTP4MADETwQwQMRPBAtBhE8EMEDETzDdpXmyQqzIIIHInggggeicIjggQgeiOBRIEQe+oMIHojgUSBE8EAED0T1EcEDETyqj8g6z+B9nRERPBDBo/qI4IEIHtVHBI+yEcGjbER2yVA2Io/eKBsRPMpGBI+yEcGjrHbXzn7C83l/BRgAezhEuPoii34AAAAASUVORK5CYII=">
                       </div>
-                      <span class="text-pre">test</span>
+                      <span id='generalAbilityDescription' class="text-pre">test</span>
                     </span>
                   </div>
                 </div>
@@ -83,7 +87,7 @@
                 <div class="line-height-120 hanging-indent">
                   <div id="itemsWrapper">
                     <span class="font-weight-bold">Items</span>
-                    <span>test</span>
+                    <span id="item">test</span>
                   </div>
                 </div>
               </div>
@@ -94,14 +98,14 @@
         <div class="font-sheet">
           <div class="line-height-120 hanging-indent">
             <span id="armorClass" class="font-weight-bold">AC</span> 18;
-            <span id="fortSave" class="font-weight-bold">Fort</span> +12,
-            <span id="refSave" class="font-weight-bold">Ref</span> +6,
-            <span id="willSave" class="font-weight-bold">Will</span> +12; test
+            <span id="fortSave" class="font-weight-bold">Fort</span> +12
+            <span id="refSave" class="font-weight-bold">Ref</span> +6;
+            <span id="willSave" class="font-weight-bold">Will</span> +12;
           </div>
         </div>
         <div class="font-sheet">
           <div class="line-height-120 hanging-indent">
-            <span id="hitPoints" class="font-weight-bold">HP</span> 42 (asdf);
+            <span id="hitPoints" class="font-weight-bold">HP 42 (asdf)</span>
             <span id="immunities" class="font-weight-bold">Immunities</span> immunity;
             <span id="resistances" class="font-weight-bold">Resistances</span> resistance;
             <span id="weaknesses" class="font-weight-bold">Weaknesses</span> weakness
