@@ -18,7 +18,6 @@ def generateImage(htmlText: str, cssText: str, identifier: int):
 # def editHtml(characterAttributes: json):
 #   print()
 
-
 @bot.tree.command()
 async def enemy_generator(interaction: Interaction, option: str):
   for i in range(2):
