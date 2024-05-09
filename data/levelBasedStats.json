@@ -1,0 +1,316 @@
+{
+  "levels": {
+    "levelNegOne": {
+      "spellAttackBonus": {
+        "moderate": 5,
+        "high": 8,
+        "extreme": 11
+      },
+      "spellDC": {
+        "moderate": 13,
+        "high": 16,
+        "extreme": 19
+      }
+    },
+    "levelZero": {
+      "spellAttackBonus": {
+        "moderate": 5,
+        "high": 8,
+        "extreme": 11
+      },
+      "spellDC": {
+        "moderate": 13,
+        "high": 16,
+        "extreme": 19
+      }
+    },
+    "levelOne": {
+      "spellAttackBonus": {
+        "moderate": 6,
+        "high": 9,
+        "extreme": 12
+      },
+      "spellDC": {
+        "moderate": 14,
+        "high": 17,
+        "extreme": 20
+      }
+    },
+    "levelTwo": {
+      "spellAttackBonus": {
+        "moderate": 7,
+        "high": 10,
+        "extreme": 14
+      },
+      "spellDC": {
+        "moderate": 15,
+        "high": 18,
+        "extreme": 22
+      }
+    },
+    "levelThree": {
+      "spellAttackBonus": {
+        "moderate": 9,
+        "high": 12,
+        "extreme": 15
+      },
+      "spellDC": {
+        "moderate": 17,
+        "high": 20,
+        "extreme": 23
+      }
+    },
+    "levelFour": {
+      "spellAttackBonus": {
+        "moderate": 10,
+        "high": 13,
+        "extreme": 17
+      },
+      "spellDC": {
+        "moderate": 18,
+        "high": 21,
+        "extreme": 25
+      }
+    },
+    "levelFive": {
+      "spellAttackBonus": {
+        "moderate": 11,
+        "high": 14,
+        "extreme": 18
+      },
+      "spellDC": {
+        "moderate": 19,
+        "high": 22,
+        "extreme": 26
+      }
+    },
+    "levelSix": {
+      "spellAttackBonus": {
+        "moderate": 13,
+        "high": 16,
+        "extreme": 19
+      },
+      "spellDC": {
+        "moderate": 21,
+        "high": 24,
+        "extreme": 27
+      }
+    },
+    "levelSeven": {
+      "spellAttackBonus": {
+        "moderate": 14,
+        "high": 17,
+        "extreme": 21
+      },
+      "spellDC": {
+        "moderate": 22,
+        "high": 25,
+        "extreme": 29
+      }
+    },
+    "levelEight": {
+      "spellAttackBonus": {
+        "moderate": 15,
+        "high": 18,
+        "extreme": 22
+      },
+      "spellDC": {
+        "moderate": 23,
+        "high": 26,
+        "extreme": 30
+      }
+    },
+    "levelNine": {
+      "spellAttackBonus": {
+        "moderate": 17,
+        "high": 20,
+        "extreme": 24
+      },
+      "spellDC": {
+        "moderate": 25,
+        "high": 28,
+        "extreme": 32
+      }
+    },
+    "levelTen": {
+      "spellAttackBonus": {
+        "moderate": 18,
+        "high": 21,
+        "extreme": 25
+      },
+      "spellDC": {
+        "moderate": 26,
+        "high": 29,
+        "extreme": 33
+      }
+    },
+    "levelEleven": {
+      "spellAttackBonus": {
+        "moderate": 19,
+        "high": 22,
+        "extreme": 26
+      },
+      "spellDC": {
+        "moderate": 27,
+        "high": 30,
+        "extreme": 34
+      }
+    },
+    "levelTwelve": {
+      "spellAttackBonus": {
+        "moderate": 21,
+        "high": 24,
+        "extreme": 28
+      },
+      "spellDC": {
+        "moderate": 29,
+        "high": 32,
+        "extreme": 36
+      }
+    },
+    "levelThirteen": {
+      "spellAttackBonus": {
+        "moderate": 22,
+        "high": 25,
+        "extreme": 29
+      },
+      "spellDC": {
+        "moderate": 30,
+        "high": 33,
+        "extreme": 37
+      }
+    },
+    "levelFourteen": {
+      "spellAttackBonus": {
+        "moderate": 23,
+        "high": 26,
+        "extreme": 31
+      },
+      "spellDC": {
+        "moderate": 31,
+        "high": 34,
+        "extreme": 39
+      }
+    },
+    "levelFifteen": {
+      "spellAttackBonus": {
+        "moderate": 25,
+        "high": 28,
+        "extreme": 32
+      },
+      "spellDC": {
+        "moderate": 33,
+        "high": 36,
+        "extreme": 40
+      }
+    },
+    "levelSixteen": {
+      "spellAttackBonus": {
+        "moderate": 26,
+        "high": 29,
+        "extreme": 33
+      },
+      "spellDC": {
+        "moderate": 34,
+        "high": 37,
+        "extreme": 41
+      }
+    },
+    "levelSeventeen": {
+      "spellAttackBonus": {
+        "moderate": 27,
+        "high": 30,
+        "extreme": 35
+      },
+      "spellDC": {
+        "moderate": 35,
+        "high": 38,
+        "extreme": 43
+      }
+    },
+    "levelEighteen": {
+      "spellAttackBonus": {
+        "moderate": 29,
+        "high": 32,
+        "extreme": 36
+      },
+      "spellDC": {
+        "moderate": 37,
+        "high": 40,
+        "extreme": 44
+      }
+    },
+    "levelNineteen": {
+      "spellAttackBonus": {
+        "moderate": 30,
+        "high": 33,
+        "extreme": 38
+      },
+      "spellDC": {
+        "moderate": 38,
+        "high": 41,
+        "extreme": 46
+      }
+    },
+    "levelTwenty": {
+      "spellAttackBonus": {
+        "moderate": 31,
+        "high": 34,
+        "extreme": 39
+      },
+      "spellDC": {
+        "moderate": 39,
+        "high": 42,
+        "extreme": 47
+      }
+    },
+    "levelTwentyOne": {
+      "spellAttackBonus": {
+        "moderate": 33,
+        "high": 36,
+        "extreme": 40
+      },
+      "spellDC": {
+        "moderate": 41,
+        "high": 44,
+        "extreme": 48
+      }
+    },
+    "levelTwentyTwo": {
+      "spellAttackBonus": {
+        "moderate": 34,
+        "high": 37,
+        "extreme": 42
+      },
+      "spellDC": {
+        "moderate": 42,
+        "high": 45,
+        "extreme": 50
+      }
+    },
+    "levelTwentyThree": {
+      "spellAttackBonus": {
+        "moderate": 35,
+        "high": 38,
+        "extreme": 43
+      },
+      "spellDC": {
+        "moderate": 43,
+        "high": 46,
+        "extreme": 51
+      }
+    },
+    "levelTwentyFour": {
+      "spellAttackBonus": {
+        "moderate": 37,
+        "high": 40,
+        "extreme": 44
+      },
+      "spellDC": {
+        "moderate": 45,
+        "high": 48,
+        "extreme": 52
+      }
+    }
+  }
+}
