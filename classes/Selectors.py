@@ -3,6 +3,30 @@ from discord.ui import Select, View
 from .EncounterBuilder import EncounterBuilder
 from encounters.Index import Encounters
 
+class ChooseNumberOfPlayersSelect(Select):
+    def __init__(self, builder: EncounterBuilder, options=None):
+        self.builder = builder
+        super().__init__(placeholder="Select the number of players in the party", max_values=1, min_values=1, options=options)
+    async def callback(self, interaction: Interaction):
+        self.builder.numPlayers = int(self.values[0])
+        await interaction.channel.last_message.delete()
+        await interaction.response.send_message('', view=ChooseEnemyTypeView(self.builder))
+
+class ChooseNumberOfPlayersView(View):
+    def __init__(self, builder: EncounterBuilder, *, timeout=180):
+        super().__init__(timeout=timeout)
+        selectOptions = [
+            SelectOption(label='', emoji='1️⃣'),
+            SelectOption(label='', emoji='2️⃣'),
+            SelectOption(label='', emoji='3️⃣'),
+            SelectOption(label='', emoji='4️⃣'),
+            SelectOption(label='', emoji='5️⃣'),
+            SelectOption(label='', emoji='6️⃣'),
+            SelectOption(label='', emoji='7️⃣'),
+            SelectOption(label='', emoji='8️⃣'),
+        ]
+        self.add_item(ChooseNumberOfPlayersSelect(builder, selectOptions))
+
 class ChooseEnemyTypeSelect(Select):
     def __init__(self, builder: EncounterBuilder, options=None):
         self.builder = builder
@@ -53,16 +77,16 @@ class ChooseDifficultySelect(Select):
     async def callback(self, interaction: Interaction):
         self.builder.difficulty = self.values[0]
         await interaction.channel.last_message.delete()
-        await interaction.response.send_message(content=self.values[0])
-        print(self.builder)
+        self.builder.generateEncounter()
 
 class ChooseDifficultyView(View):
     def __init__(self, builder: EncounterBuilder, *, timeout=180):
         super().__init__(timeout=timeout)
         selectOptions = [
-            SelectOption(label='Easy', emoji='🟢'),
-            SelectOption(label='Medium', emoji='🟡'),
-            SelectOption(label='Hard', emoji='🔴'),
-            SelectOption(label='Deadly', emoji='⚫'),
+            SelectOption(label='Trivial', emoji='🟢'),
+            SelectOption(label='Low', emoji='🟡'),
+            SelectOption(label='Moderate', emoji='🟠'),
+            SelectOption(label='Severe', emoji='🔴'),
+            SelectOption(label='Extreme', emoji='⚫'),
         ]
         self.add_item(ChooseDifficultySelect(builder, selectOptions))

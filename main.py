@@ -1,11 +1,10 @@
 import os
 import typing
 from dotenv import load_dotenv
-from discord import Interaction, app_commands, File, Embed, Message, TextChannel, SelectOption, Thread
-from discord.ui import Select, View
+from discord import Interaction, Message, TextChannel
 from classes.Bot import Bot
 from encounters.Index import Encounters
-from classes.ChooseEnemyType import ChooseEnemyTypeView, ChooseEnemySpecificTypeView
+from classes.Selectors import ChooseNumberOfPlayersView
 from classes.EncounterBuilder import EncounterBuilder
 from html2image import Html2Image
 from bs4 import BeautifulSoup as bs
@@ -19,8 +18,6 @@ def generateImage(htmlText: str, cssText: str, identifier: int):
   hti = Html2Image(output_path='views/', size=(800, 800))
   hti.screenshot(html_str=htmlText, css_str=cssText, save_as=f'statblock_numero_{identifier}.png')
 
-# def editHtml(characterAttributes: json):
-#   print()
 
 @bot.event
 async def on_message(message: Message):
@@ -28,27 +25,6 @@ async def on_message(message: Message):
   if message.author != bot.user:
     await channel.send('User sent message')
     return
-  if message.author == bot.user:
-    # await channel.last_message.delete()
-    if 'humanoid' in message.content.lower():
-      builder.enemyType = 'Humanoid'
-      ChooseEnemySpecificTypeView(builder)
-      await channel.send('1 was chosen')
-    if 'undead' in message.content.lower():
-      await channel.send('2 was chosen')
-    if 'animal' in message.content.lower():
-      await channel.send('3 was chosen')
-    if 'extraplanar' in message.content.lower():
-      await channel.send('4 was chosen')
-    if 'fey' in message.content.lower():
-      await channel.send('5 was chosen')
-    if 'monstrosity' in message.content.lower():
-      await channel.send('6 was chosen')
-    if 'primordial' in message.content.lower():
-      await channel.send('7 was chosen')
-    print(builder)
-
-  channel: TextChannel = message.channel
 
 
 @bot.tree.command()
@@ -74,10 +50,9 @@ async def enemy_generator(interaction: Interaction, option: typing.Literal[
   'Party Level: 19',
   'Party Level: 20'
 ]):
-  channel = interaction.channel
   builder.partyLevel = int(option[-2:].strip())
-  await interaction.response.send_message(option)
-  await channel.send('', view=ChooseEnemyTypeView())
+  await interaction.response.send_message('', view=ChooseNumberOfPlayersView(builder))
+  # await channel.send('', view=ChooseEnemyTypeView(builder))
 
   # Call enemy generator class here
   # Mocking the enemy generator, returning two statblocks:
