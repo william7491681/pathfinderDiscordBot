@@ -1,16 +1,19 @@
 import os
 import typing
 from dotenv import load_dotenv
-from discord import Interaction, app_commands, File, Embed, Message, TextChannel
-from discord.ui import Select
+from discord import Interaction, app_commands, File, Embed, Message, TextChannel, SelectOption, Thread
+from discord.ui import Select, View
 from classes.Bot import Bot
 from encounters.Index import Encounters
+from classes.ChooseEnemyType import ChooseEnemyTypeView, ChooseEnemySpecificTypeView
+from classes.EncounterBuilder import EncounterBuilder
 from html2image import Html2Image
 from bs4 import BeautifulSoup as bs
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot = Bot()
+builder = EncounterBuilder()
 
 def generateImage(htmlText: str, cssText: str, identifier: int):
   hti = Html2Image(output_path='views/', size=(800, 800))
@@ -21,43 +24,63 @@ def generateImage(htmlText: str, cssText: str, identifier: int):
 
 @bot.event
 async def on_message(message: Message):
+  channel: TextChannel = message.channel
   if message.author != bot.user:
-    Select(placeholder='Select an option', options=[app_commands.Choice(name='Humanoid: Goblin', value='Humanoid: Goblin')])
+    await channel.send('User sent message')
     return
   if message.author == bot.user:
-    if (message.content != 'How many players are in the party?') or (message.content != 'What level are the party members?'):
-      return
+    # await channel.last_message.delete()
+    if 'humanoid' in message.content.lower():
+      builder.enemyType = 'Humanoid'
+      ChooseEnemySpecificTypeView(builder)
+      await channel.send('1 was chosen')
+    if 'undead' in message.content.lower():
+      await channel.send('2 was chosen')
+    if 'animal' in message.content.lower():
+      await channel.send('3 was chosen')
+    if 'extraplanar' in message.content.lower():
+      await channel.send('4 was chosen')
+    if 'fey' in message.content.lower():
+      await channel.send('5 was chosen')
+    if 'monstrosity' in message.content.lower():
+      await channel.send('6 was chosen')
+    if 'primordial' in message.content.lower():
+      await channel.send('7 was chosen')
+    print(builder)
 
   channel: TextChannel = message.channel
-  await channel.last_message.add_reaction('1️⃣')
-  await channel.last_message.add_reaction('2️⃣')
-  await channel.last_message.add_reaction('3️⃣')
-  await channel.last_message.add_reaction('4️⃣')
-
-  async def check(reaction, user):
-    print(reaction)
-    print(reaction.emoji)
-    if (str(reaction.emoji) == '4️⃣'):
-      return True
-    else:
-      return False
-
-  try:
-    reaction, user = await bot.wait_for('reaction_add', timeout=60.0, check=check)
-    if str(reaction.emoji) == '2️⃣':
-      await channel.last_message.delete()
-      await channel.send('What level are the party members?')
-  except:
-    await channel.send('Did not respond in time')
-  else:
-    None
 
 
 @bot.tree.command()
-async def enemy_generator(interaction: Interaction, option: str):
+async def enemy_generator(interaction: Interaction, option: typing.Literal[
+  'Party Level: 1',
+  'Party Level: 2',
+  'Party Level: 3',
+  'Party Level: 4',
+  'Party Level: 5',
+  'Party Level: 6',
+  'Party Level: 7',
+  'Party Level: 8',
+  'Party Level: 9',
+  'Party Level: 10',
+  'Party Level: 11',
+  'Party Level: 12',
+  'Party Level: 13',
+  'Party Level: 14',
+  'Party Level: 15',
+  'Party Level: 16',
+  'Party Level: 17',
+  'Party Level: 18',
+  'Party Level: 19',
+  'Party Level: 20'
+]):
+  channel = interaction.channel
+  builder.partyLevel = int(option[-2:].strip())
+  await interaction.response.send_message(option)
+  await channel.send('', view=ChooseEnemyTypeView())
+
   # Call enemy generator class here
   # Mocking the enemy generator, returning two statblocks:
-  await interaction.channel.send('How many players are in the party?')
   # for i in range(2):
   #   with open('views/styles.css', 'r') as cssFile:
   #     if i == 0:
@@ -74,8 +97,6 @@ async def enemy_generator(interaction: Interaction, option: str):
   #       # hti = Html2Image(output_path='views/', size=(800, 800))
   #       # await hti.screenshot(html_str=htmlText, css_str=cssText, save_as=f'statblock_numero_{i}.png')
 
-  interaction.response.send_modal()
-
 
   # if 'Humanoid' in option:
   #   # await interaction.response.send_message(f'Chose a humanoid: {option.split(sep=": ", )[1]}', ephemeral=True, )
@@ -87,18 +108,5 @@ async def enemy_generator(interaction: Interaction, option: str):
 
   # else:
   #   await interaction.response.send_message(f'chose {option}', ephemeral=True)
-
-
-@enemy_generator.autocomplete('option')
-async def enemy_generator_autocompletion(interaction: Interaction, currentInput: str) -> typing.List[app_commands.Choice[str]]:
-  data = []
-
-  encounters = Encounters().encounterTypes
-  for encounter in encounters:
-    if len(data) >= 25:
-      break
-    if currentInput.lower() in encounter.lower():
-      data.append(app_commands.Choice(name=encounter, value=encounter))
-  return data
 
 bot.run(token=TOKEN)
