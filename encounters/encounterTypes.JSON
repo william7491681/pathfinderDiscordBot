@@ -1,65 +1,71 @@
 {
-  "encounters": [
-  "Humanoid: Brute",
-  "Humanoid: Crafter",
-  "Humanoid: Expert",
-  "Humanoid: Shooter",
-  "Humanoid: Skirmisher",
-  "Humanoid: Soldier",
-  "Humanoid: Spellblade",
-
-  "Undead: Awakened",
-  "Undead: Ghoul",
-  "Undead: Skeleton",
-  "Undead: Spirit",
-  "Undead: Vampire",
-  "Undead: Wight",
-  "Undead: Wraith",
-  "Undead: Zombie",
-
-  "Animal: Aquatic",
-  "Animal: Beast",
-  "Animal: Critter",
-  "Animal: Dinosaur",
-  "Animal: Insect",
-  "Animal: Raptor",
-  "Animal: Serpent",
-  "Animal: Swarm",
-
-  "Extraplanar: Abaddon",
-  "Extraplanar: Aberration",
-  "Extraplanar: Celestial",
-  "Extraplanar: Demon",
-  "Extraplanar: Devil",
-  "Extraplanar: Loa",
-  "Extraplanar: Necril",
-  "Extraplanar: Titan",
-
-  "Fey: Faerie",
-  "Fey: Fey",
-  "Fey: Gremlin",
-  "Fey: Leshy",
-  "Fey: Musk",
-  "Fey: Nymph",
-  "Fey: Spriggan",
-  "Fey: Sprite",
-
-  "Monstrosity: Bogey",
-  "Monstrosity: Giant",
-  "Monstrosity: Hag",
-  "Monstrosity: Kobold",
-  "Monstrosity: Lycan",
-  "Monstrosity: Naga",
-  "Monstrosity: Skelm",
-  "Monstrosity: Troll",
-
-  "Primordial: Dragon",
-  "Primordial: Drake",
-  "Primordial: Elemental",
-  "Primordial: Genie",
-  "Primordial: Lindworm",
-  "Primordial: Oni",
-  "Primordial: Protean",
-  "Primordial: Sphinx"
+  "Humanoid": [
+    "Brute",
+    "Crafter",
+    "Expert",
+    "Shooter",
+    "Skirmisher",
+    "Soldier",
+    "Spellblade"
+  ],
+  "Undead": [
+    "Awakened",
+    "Ghoul",
+    "Skeleton",
+    "Spirit",
+    "Vampire",
+    "Wight",
+    "Wraith",
+    "Zombie"
+  ],
+  "Animal": [
+    "Aquatic",
+    "Beast",
+    "Critter",
+    "Dinosaur",
+    "Insect",
+    "Raptor",
+    "Serpent",
+    "Swarm"
+  ],
+  "Extraplanar": [
+    "Abaddon",
+    "Aberration",
+    "Celestial",
+    "Demon",
+    "Devil",
+    "Loa",
+    "Necril",
+    "Titan"
+  ],
+  "Fey": [
+    "Faerie",
+    "Fey",
+    "Gremlin",
+    "Leshy",
+    "Musk",
+    "Nymph",
+    "Spriggan",
+    "Sprite"
+  ],
+  "Monstrosity": [
+    "Bogey",
+    "Giant",
+    "Hag",
+    "Kobold",
+    "Lycan",
+    "Naga",
+    "Skelm",
+    "Troll"
+  ],
+  "Primordial": [
+    "Dragon",
+    "Drake",
+    "Elemental",
+    "Genie",
+    "Lindworm",
+    "Oni",
+    "Protean",
+    "Sphinx"
   ]
 }
